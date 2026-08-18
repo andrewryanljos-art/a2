@@ -109,6 +109,7 @@ header {
     list-style: none;
     align-items: center;
     gap: 2.2rem;
+    flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -120,6 +121,7 @@ header {
     color: var(--text-muted);
     position: relative;
     padding: 0.3rem 0;
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -141,6 +143,26 @@ header {
     color: var(--text-dark);
 }
 
+.nav-link.nav-btn {
+    border: 2px solid var(--border-dark);
+    padding: 0.5rem 1.3rem !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.nav-link.nav-btn::after {
+    display: none !important;
+}
+
+.nav-link.nav-btn:hover {
+    background: var(--text-dark);
+    color: #FFF !important;
+}
+
 .nav-btn {
     border: 2px solid var(--border-dark);
     padding: 0.5rem 1.3rem;
@@ -148,12 +170,15 @@ header {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .nav-btn:hover {
     background: var(--text-dark);
     color: #FFF !important;
 }
+
 
 /* Buttons */
 .btn {
@@ -918,6 +943,31 @@ footer {
 }
 
 /* Responsive Editorial Layout */
+@media (max-width: 1100px) {
+    .nav-container {
+        padding: 1.2rem 1.5rem;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .nav-menu {
+        gap: 1.2rem;
+    }
+    .nav-link {
+        font-size: 0.78rem;
+    }
+    .nav-link.nav-btn {
+        padding: 0.4rem 1rem !important;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-menu {
+        display: none;
+    }
+}
+
 @media (max-width: 992px) {
     .hero-grid, .contact-grid, .reviews-stack {
         grid-template-columns: 1fr;
@@ -952,7 +1002,5 @@ footer {
     .hero-content h1 {
         font-size: 3.2rem;
     }
-    .nav-menu {
-        display: none;
-    }
 }
+
